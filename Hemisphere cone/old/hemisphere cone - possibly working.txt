@@ -1,0 +1,1751 @@
+;HOLLOW hemisphere - internal cone geometry
+;HOLLOW hemisphere - two filaments thick
+                                             
+#include "C\Users\howell29\Desktop\ULTIMUSV.PGM"\nCALL SetPress Q43 P1; Try dropping back to 28
+                                             
+G108; VELOCITY ON
+G91;  INCREMENTAL
+                                             
+CALL TogglePress P1; 	Change # to your pressure box
+DWELL 0.25; 		Accounts for ink lag, change as necessary
+                                             
+;Height = (20mm/filament)/0.63mm = 44 filaments 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 1 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                             
+;Perimeter 1 
+G3 X0.00 Y-0.5842 I-19.416 J-0.292 F10;
+G1 X0.5842 Y0.5842 Z0.00 F10; 
+;Perimeter 2
+G3 X0.00 Y-0.5842 I-20 J-0.292 F10;
+                                        
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 2 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 19.981; list2 = 0.425; list3 = 0.019, i = 0
+G1 X-0.019 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.981 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 19.556; list2 = 0.0; list3 = 0.0, i = 1
+G1 X-0.425 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-19.556 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 3 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 19.957; list2 = 0.422; list3 = 0.024, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-19.112 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 19.534; list2 = 0.422; list3 = 0.022, i = 1
+G1 X0.422 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-19.534 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 19.112; list2 = 0.0; list3 = 0.0, i = 2
+G1 X0.422 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-19.957 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 4 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 19.923; list2 = 0.628; list3 = 0.034, i = 0
+G1 X-0.034 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.923 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 19.296; list2 = 0.628; list3 = 0.239, i = 1
+G1 X-0.628 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-19.296 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 18.668; list2 = 0.0; list3 = 0.444, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.668 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 5 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 19.88; list2 = 0.552; list3 = 0.043, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.224 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 19.328; list2 = 0.552; list3 = -0.032, i = 1
+G1 X0.552 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.776 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 18.776; list2 = 0.552; list3 = -0.108, i = 2
+G1 X0.552 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-19.328 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 18.224; list2 = 0.0; list3 = 0.0, i = 3
+G1 X0.552 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-19.88 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 6 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 19.826; list2 = 0.512; list3 = 0.053, i = 0
+G1 X-0.053 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.826 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 19.315; list2 = 0.512; list3 = 0.013, i = 1
+G1 X-0.512 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-19.315 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 18.803; list2 = 0.512; list3 = -0.027, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.803 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 18.292; list2 = 0.512; list3 = -0.068, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.292 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 17.78; list2 = 0.0; list3 = 0.0, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.78 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 7 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 19.763; list2 = 0.607; list3 = 0.063, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.336 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 19.157; list2 = 0.607; list3 = 0.158, i = 1
+G1 X0.607 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.943 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 18.55; list2 = 0.607; list3 = 0.254, i = 2
+G1 X0.607 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.55 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 17.943; list2 = 0.607; list3 = 0.349, i = 3
+G1 X0.607 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-19.157 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 17.336; list2 = 0.0; list3 = 0.444, i = 4
+G1 X0.607 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-19.763 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 8 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 19.69; list2 = 0.56; list3 = 0.073, i = 0
+G1 X-0.073 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.69 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 19.131; list2 = 0.56; list3 = 0.026, i = 1
+G1 X-0.56 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-19.131 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 18.571; list2 = 0.56; list3 = -0.021, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.571 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 18.011; list2 = 0.56; list3 = -0.069, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.011 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 17.452; list2 = 0.56; list3 = -0.116, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.452 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 16.892; list2 = 0.0; list3 = 0.0, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.892 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 9 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 19.607; list2 = 0.632; list3 = 0.083, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.448 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 18.976; list2 = 0.632; list3 = 0.155, i = 1
+G1 X0.632 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.08 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 18.344; list2 = 0.632; list3 = 0.227, i = 2
+G1 X0.632 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.712 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 17.712; list2 = 0.632; list3 = 0.3, i = 3
+G1 X0.632 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.344 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 17.08; list2 = 0.632; list3 = 0.372, i = 4
+G1 X0.632 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.976 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 16.448; list2 = 0.0; list3 = 0.444, i = 5
+G1 X0.632 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-19.607 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 10 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 19.514; list2 = 0.585; list3 = 0.093, i = 0
+G1 X-0.093 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.514 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 18.929; list2 = 0.585; list3 = 0.046, i = 1
+G1 X-0.585 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.929 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 18.344; list2 = 0.585; list3 = -0.0, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.344 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 17.759; list2 = 0.585; list3 = -0.047, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.759 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 17.174; list2 = 0.585; list3 = -0.094, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.174 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 16.589; list2 = 0.585; list3 = -0.141, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.589 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 16.004; list2 = 0.0; list3 = 0.0, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.004 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 11 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 19.411; list2 = 0.55; list3 = 0.104, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.56 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 18.861; list2 = 0.55; list3 = 0.069, i = 1
+G1 X0.55 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.11 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 18.31; list2 = 0.55; list3 = 0.034, i = 2
+G1 X0.55 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.66 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 17.76; list2 = 0.55; list3 = -0.001, i = 3
+G1 X0.55 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.21 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 17.21; list2 = 0.55; list3 = -0.036, i = 4
+G1 X0.55 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.76 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 16.66; list2 = 0.55; list3 = -0.071, i = 5
+G1 X0.55 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.31 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 16.11; list2 = 0.55; list3 = -0.106, i = 6
+G1 X0.55 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.861 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 15.56; list2 = 0.0; list3 = 0.0, i = 7
+G1 X0.55 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-19.411 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 12 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 19.297; list2 = 0.597; list3 = 0.114, i = 0
+G1 X-0.114 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.297 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 18.699; list2 = 0.597; list3 = 0.161, i = 1
+G1 X-0.597 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.699 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 18.102; list2 = 0.597; list3 = 0.208, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.102 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 17.505; list2 = 0.597; list3 = 0.255, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.505 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 16.908; list2 = 0.597; list3 = 0.303, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.908 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 16.31; list2 = 0.597; list3 = 0.35, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.31 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 15.713; list2 = 0.597; list3 = 0.397, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.713 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;Counter 4 = 7 
+;List1 = 15.116; list2 = 0.0; list3 = 0.444, i = 7
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.116 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 13 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 19.172; list2 = 0.562; list3 = 0.125, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.672 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 18.609; list2 = 0.562; list3 = 0.09, i = 1
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.234 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 18.047; list2 = 0.562; list3 = 0.055, i = 2
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.797 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 17.484; list2 = 0.562; list3 = 0.021, i = 3
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.359 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 16.922; list2 = 0.562; list3 = -0.014, i = 4
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.922 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 16.359; list2 = 0.562; list3 = -0.049, i = 5
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.484 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 15.797; list2 = 0.562; list3 = -0.084, i = 6
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.047 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 15.234; list2 = 0.562; list3 = -0.118, i = 7
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.609 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;Counter 4 = 8 
+;List1 = 14.672; list2 = 0.0; list3 = 0.0, i = 8
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-19.172 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 14 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 19.036; list2 = 0.601; list3 = 0.136, i = 0
+G1 X-0.136 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.036 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 18.435; list2 = 0.601; list3 = 0.174, i = 1
+G1 X-0.601 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.435 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 17.834; list2 = 0.601; list3 = 0.213, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.834 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 17.233; list2 = 0.601; list3 = 0.251, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.233 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 16.632; list2 = 0.601; list3 = 0.29, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.632 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 16.031; list2 = 0.601; list3 = 0.328, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.031 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 15.43; list2 = 0.601; list3 = 0.367, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.43 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;Counter 4 = 7 
+;List1 = 14.829; list2 = 0.601; list3 = 0.405, i = 7
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.829 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;Counter 4 = 8 
+;List1 = 14.228; list2 = 0.0; list3 = 0.444, i = 8
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.228 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 15 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 18.889; list2 = 0.567; list3 = 0.147, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.784 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 18.322; list2 = 0.567; list3 = 0.113, i = 1
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.351 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 17.755; list2 = 0.567; list3 = 0.079, i = 2
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.919 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 17.188; list2 = 0.567; list3 = 0.046, i = 3
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.486 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 16.62; list2 = 0.567; list3 = 0.012, i = 4
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.053 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 16.053; list2 = 0.567; list3 = -0.022, i = 5
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.62 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 15.486; list2 = 0.567; list3 = -0.056, i = 6
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.188 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 14.919; list2 = 0.567; list3 = -0.089, i = 7
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.755 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;Counter 4 = 8 
+;List1 = 14.351; list2 = 0.567; list3 = -0.123, i = 8
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.322 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;Counter 4 = 9 
+;List1 = 13.784; list2 = 0.0; list3 = 0.0, i = 9
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.889 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 16 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 18.731; list2 = 0.599; list3 = 0.158, i = 0
+G1 X-0.158 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-18.731 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 18.132; list2 = 0.599; list3 = 0.19, i = 1
+G1 X-0.599 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-18.132 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 17.533; list2 = 0.599; list3 = 0.222, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.533 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 16.934; list2 = 0.599; list3 = 0.253, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.934 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 16.335; list2 = 0.599; list3 = 0.285, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.335 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 15.736; list2 = 0.599; list3 = 0.317, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.736 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 15.137; list2 = 0.599; list3 = 0.349, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.137 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;Counter 4 = 7 
+;List1 = 14.538; list2 = 0.599; list3 = 0.38, i = 7
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.538 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;Counter 4 = 8 
+;List1 = 13.939; list2 = 0.599; list3 = 0.412, i = 8
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.939 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+;Counter 4 = 9 
+;List1 = 13.34; list2 = 0.0; list3 = 0.444, i = 9
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.34 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 17 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 18.561; list2 = 0.567; list3 = 0.17, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.896 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 17.995; list2 = 0.567; list3 = 0.137, i = 1
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.463 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 17.428; list2 = 0.567; list3 = 0.105, i = 2
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.029 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 16.862; list2 = 0.567; list3 = 0.072, i = 3
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.596 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 16.295; list2 = 0.567; list3 = 0.04, i = 4
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.162 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 15.729; list2 = 0.567; list3 = 0.007, i = 5
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.729 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 15.162; list2 = 0.567; list3 = -0.025, i = 6
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.295 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 14.596; list2 = 0.567; list3 = -0.058, i = 7
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.862 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;Counter 4 = 8 
+;List1 = 14.029; list2 = 0.567; list3 = -0.09, i = 8
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.428 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;Counter 4 = 9 
+;List1 = 13.463; list2 = 0.567; list3 = -0.123, i = 9
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.995 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+;Counter 4 = 10 
+;List1 = 12.896; list2 = 0.0; list3 = 0.0, i = 10
+G1 X0.567 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.561 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 18 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 18.379; list2 = 0.593; list3 = 0.182, i = 0
+G1 X-0.182 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-18.379 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 17.787; list2 = 0.593; list3 = 0.208, i = 1
+G1 X-0.593 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.787 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 17.194; list2 = 0.593; list3 = 0.234, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.194 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 16.601; list2 = 0.593; list3 = 0.261, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.601 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 16.008; list2 = 0.593; list3 = 0.287, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.008 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 15.416; list2 = 0.593; list3 = 0.313, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.416 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 14.823; list2 = 0.593; list3 = 0.339, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.823 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;Counter 4 = 7 
+;List1 = 14.23; list2 = 0.593; list3 = 0.365, i = 7
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.23 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;Counter 4 = 8 
+;List1 = 13.637; list2 = 0.593; list3 = 0.392, i = 8
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.637 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+;Counter 4 = 9 
+;List1 = 13.045; list2 = 0.593; list3 = 0.418, i = 9
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.045 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+;Counter 4 = 10 
+;List1 = 12.452; list2 = 0.0; list3 = 0.444, i = 10
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.452 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 19 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 18.185; list2 = 0.562; list3 = 0.194, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.008 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 17.624; list2 = 0.562; list3 = 0.163, i = 1
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.57 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 17.062; list2 = 0.562; list3 = 0.132, i = 2
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.131 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 16.5; list2 = 0.562; list3 = 0.101, i = 3
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.693 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 15.939; list2 = 0.562; list3 = 0.07, i = 4
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.254 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 15.377; list2 = 0.562; list3 = 0.038, i = 5
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.816 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 14.816; list2 = 0.562; list3 = 0.007, i = 6
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.377 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 14.254; list2 = 0.562; list3 = -0.024, i = 7
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.939 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;Counter 4 = 8 
+;List1 = 13.693; list2 = 0.562; list3 = -0.055, i = 8
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.5 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;Counter 4 = 9 
+;List1 = 13.131; list2 = 0.562; list3 = -0.086, i = 9
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.062 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+;Counter 4 = 10 
+;List1 = 12.57; list2 = 0.562; list3 = -0.118, i = 10
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.624 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+;Counter 4 = 11 
+;List1 = 12.008; list2 = 0.0; list3 = 0.0, i = 11
+G1 X0.562 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-18.185 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 20 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 17.978; list2 = 0.583; list3 = 0.207, i = 0
+G1 X-0.207 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-17.978 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 17.395; list2 = 0.583; list3 = 0.229, i = 1
+G1 X-0.583 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-17.395 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 16.812; list2 = 0.583; list3 = 0.25, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.812 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 16.229; list2 = 0.583; list3 = 0.272, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.229 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 15.646; list2 = 0.583; list3 = 0.293, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.646 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 15.063; list2 = 0.583; list3 = 0.315, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.063 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 14.479; list2 = 0.583; list3 = 0.336, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.479 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;Counter 4 = 7 
+;List1 = 13.896; list2 = 0.583; list3 = 0.358, i = 7
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.896 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;Counter 4 = 8 
+;List1 = 13.313; list2 = 0.583; list3 = 0.379, i = 8
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.313 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+;Counter 4 = 9 
+;List1 = 12.73; list2 = 0.583; list3 = 0.401, i = 9
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.73 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+;Counter 4 = 10 
+;List1 = 12.147; list2 = 0.583; list3 = 0.422, i = 10
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.147 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+;Counter 4 = 11 
+;List1 = 11.564; list2 = 0.0; list3 = 0.444, i = 11
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-11.564 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 21 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 17.524; list2 = 0.571; list3 = 0.234, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-10.676 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 16.953; list2 = 0.571; list3 = 0.201, i = 1
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-11.247 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 16.383; list2 = 0.571; list3 = 0.168, i = 2
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-11.817 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 15.812; list2 = 0.571; list3 = 0.136, i = 3
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.388 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 15.241; list2 = 0.571; list3 = 0.103, i = 4
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.959 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 14.671; list2 = 0.571; list3 = 0.07, i = 5
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.529 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 14.1; list2 = 0.571; list3 = 0.037, i = 6
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.1 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 13.529; list2 = 0.571; list3 = 0.004, i = 7
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.671 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;Counter 4 = 8 
+;List1 = 12.959; list2 = 0.571; list3 = -0.028, i = 8
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.241 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;Counter 4 = 9 
+;List1 = 12.388; list2 = 0.571; list3 = -0.061, i = 9
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.812 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+;Counter 4 = 10 
+;List1 = 11.817; list2 = 0.571; list3 = -0.094, i = 10
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.383 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+;Counter 4 = 11 
+;List1 = 11.247; list2 = 0.571; list3 = -0.127, i = 11
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.953 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+;Counter 4 = 12 
+;List1 = 10.676; list2 = 0.0; list3 = 0.0, i = 12
+G1 X0.571 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.524 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 22 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 17.276; list2 = 0.587; list3 = 0.248, i = 0
+G1 X-0.248 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-17.276 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 16.689; list2 = 0.587; list3 = 0.265, i = 1
+G1 X-0.587 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.689 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 16.102; list2 = 0.587; list3 = 0.281, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.102 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 15.515; list2 = 0.587; list3 = 0.297, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.515 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 14.928; list2 = 0.587; list3 = 0.313, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.928 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 14.341; list2 = 0.587; list3 = 0.33, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.341 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 13.754; list2 = 0.587; list3 = 0.346, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.754 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;Counter 4 = 7 
+;List1 = 13.167; list2 = 0.587; list3 = 0.362, i = 7
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.167 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;Counter 4 = 8 
+;List1 = 12.58; list2 = 0.587; list3 = 0.379, i = 8
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.58 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+;Counter 4 = 9 
+;List1 = 11.993; list2 = 0.587; list3 = 0.395, i = 9
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-11.993 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+;Counter 4 = 10 
+;List1 = 11.406; list2 = 0.587; list3 = 0.411, i = 10
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-11.406 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+;Counter 4 = 11 
+;List1 = 10.819; list2 = 0.587; list3 = 0.428, i = 11
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-10.819 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+;Counter 4 = 12 
+;List1 = 10.232; list2 = 0.0; list3 = 0.444, i = 12
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-10.232 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 23 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 17.012; list2 = 0.602; list3 = 0.263, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-9.788 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 16.41; list2 = 0.602; list3 = 0.278, i = 1
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-10.39 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 15.808; list2 = 0.602; list3 = 0.293, i = 2
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-10.992 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 15.206; list2 = 0.602; list3 = 0.308, i = 3
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-11.594 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 14.604; list2 = 0.602; list3 = 0.323, i = 4
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.196 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 14.002; list2 = 0.602; list3 = 0.339, i = 5
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.798 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 13.4; list2 = 0.602; list3 = 0.354, i = 6
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.4 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 12.798; list2 = 0.602; list3 = 0.369, i = 7
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.002 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;Counter 4 = 8 
+;List1 = 12.196; list2 = 0.602; list3 = 0.384, i = 8
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.604 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;Counter 4 = 9 
+;List1 = 11.594; list2 = 0.602; list3 = 0.399, i = 9
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.206 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+;Counter 4 = 10 
+;List1 = 10.992; list2 = 0.602; list3 = 0.414, i = 10
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.808 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+;Counter 4 = 11 
+;List1 = 10.39; list2 = 0.602; list3 = 0.429, i = 11
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.41 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+;Counter 4 = 12 
+;List1 = 9.788; list2 = 0.0; list3 = 0.444, i = 12
+G1 X0.602 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-17.012 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 24 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 16.734; list2 = 0.568; list3 = 0.279, i = 0
+G1 X-0.279 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-16.734 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 16.165; list2 = 0.568; list3 = 0.245, i = 1
+G1 X-0.568 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-16.165 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 15.597; list2 = 0.568; list3 = 0.212, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.597 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 15.028; list2 = 0.568; list3 = 0.178, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.028 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 14.46; list2 = 0.568; list3 = 0.144, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.46 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 13.891; list2 = 0.568; list3 = 0.111, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.891 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 13.323; list2 = 0.568; list3 = 0.077, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.323 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;Counter 4 = 7 
+;List1 = 12.755; list2 = 0.568; list3 = 0.044, i = 7
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.755 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;Counter 4 = 8 
+;List1 = 12.186; list2 = 0.568; list3 = 0.01, i = 8
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.186 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+;Counter 4 = 9 
+;List1 = 11.618; list2 = 0.568; list3 = -0.024, i = 9
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-11.618 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+;Counter 4 = 10 
+;List1 = 11.049; list2 = 0.568; list3 = -0.057, i = 10
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-11.049 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+;Counter 4 = 11 
+;List1 = 10.481; list2 = 0.568; list3 = -0.091, i = 11
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-10.481 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+;Counter 4 = 12 
+;List1 = 9.912; list2 = 0.568; list3 = -0.124, i = 12
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-9.912 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;; 
+;Counter 4 = 13 
+;List1 = 9.344; list2 = 0.0; list3 = 0.0, i = 13
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-9.344 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 25 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 16.439; list2 = 0.58; list3 = 0.295, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-8.9 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 15.859; list2 = 0.58; list3 = 0.307, i = 1
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-9.48 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 15.279; list2 = 0.58; list3 = 0.318, i = 2
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-10.06 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 14.699; list2 = 0.58; list3 = 0.329, i = 3
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-10.64 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 14.119; list2 = 0.58; list3 = 0.341, i = 4
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-11.22 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 13.539; list2 = 0.58; list3 = 0.352, i = 5
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-11.799 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 12.959; list2 = 0.58; list3 = 0.364, i = 6
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.379 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 12.379; list2 = 0.58; list3 = 0.375, i = 7
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.959 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;Counter 4 = 8 
+;List1 = 11.799; list2 = 0.58; list3 = 0.387, i = 8
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.539 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;Counter 4 = 9 
+;List1 = 11.22; list2 = 0.58; list3 = 0.398, i = 9
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.119 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+;Counter 4 = 10 
+;List1 = 10.64; list2 = 0.58; list3 = 0.41, i = 10
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.699 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+;Counter 4 = 11 
+;List1 = 10.06; list2 = 0.58; list3 = 0.421, i = 11
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.279 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+;Counter 4 = 12 
+;List1 = 9.48; list2 = 0.58; list3 = 0.433, i = 12
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.859 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+;Counter 4 = 13 
+;List1 = 8.9; list2 = 0.0; list3 = 0.444, i = 13
+G1 X0.58 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-16.439 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 26 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 16.126; list2 = 0.59; list3 = 0.312, i = 0
+G1 X-0.312 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-16.126 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 15.536; list2 = 0.59; list3 = 0.323, i = 1
+G1 X-0.59 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-15.536 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 14.946; list2 = 0.59; list3 = 0.333, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.946 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 14.356; list2 = 0.59; list3 = 0.343, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.356 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 13.766; list2 = 0.59; list3 = 0.353, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.766 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 13.176; list2 = 0.59; list3 = 0.363, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.176 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 12.586; list2 = 0.59; list3 = 0.373, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.586 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;Counter 4 = 7 
+;List1 = 11.996; list2 = 0.59; list3 = 0.383, i = 7
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-11.996 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;Counter 4 = 8 
+;List1 = 11.406; list2 = 0.59; list3 = 0.393, i = 8
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-11.406 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+;Counter 4 = 9 
+;List1 = 10.816; list2 = 0.59; list3 = 0.404, i = 9
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-10.816 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+;Counter 4 = 10 
+;List1 = 10.226; list2 = 0.59; list3 = 0.414, i = 10
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-10.226 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+;Counter 4 = 11 
+;List1 = 9.636; list2 = 0.59; list3 = 0.424, i = 11
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-9.636 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+;Counter 4 = 12 
+;List1 = 9.046; list2 = 0.59; list3 = 0.434, i = 12
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-9.046 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;; 
+;Counter 4 = 13 
+;List1 = 8.456; list2 = 0.0; list3 = 0.444, i = 13
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-8.456 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 27 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 15.795; list2 = 0.599; list3 = 0.331, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-8.012 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 15.197; list2 = 0.599; list3 = 0.339, i = 1
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-8.611 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 14.598; list2 = 0.599; list3 = 0.348, i = 2
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-9.209 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 13.999; list2 = 0.599; list3 = 0.357, i = 3
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-9.808 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 13.4; list2 = 0.599; list3 = 0.366, i = 4
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-10.407 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 12.802; list2 = 0.599; list3 = 0.374, i = 5
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-11.006 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 12.203; list2 = 0.599; list3 = 0.383, i = 6
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-11.604 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 11.604; list2 = 0.599; list3 = 0.392, i = 7
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.203 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;Counter 4 = 8 
+;List1 = 11.006; list2 = 0.599; list3 = 0.4, i = 8
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.802 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;Counter 4 = 9 
+;List1 = 10.407; list2 = 0.599; list3 = 0.409, i = 9
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.4 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+;Counter 4 = 10 
+;List1 = 9.808; list2 = 0.599; list3 = 0.418, i = 10
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.999 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+;Counter 4 = 11 
+;List1 = 9.209; list2 = 0.599; list3 = 0.427, i = 11
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.598 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+;Counter 4 = 12 
+;List1 = 8.611; list2 = 0.599; list3 = 0.435, i = 12
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.197 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+;Counter 4 = 13 
+;List1 = 8.012; list2 = 0.0; list3 = 0.444, i = 13
+G1 X0.599 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-15.795 J-0.292 F10; Circular motion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 28 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = 1
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+;Counter 4 = 0 
+;List1 = 15.445; list2 = 0.606; list3 = 0.35, i = 0
+G1 X-0.35 Y0.00 Z0.00 F10; perimeter difference L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-15.445 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;Counter 4 = 1 
+;List1 = 14.839; list2 = 0.606; list3 = 0.357, i = 1
+G1 X-0.606 Y0.5842 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.839 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;Counter 4 = 2 
+;List1 = 14.233; list2 = 0.606; list3 = 0.365, i = 2
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-14.233 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+;Counter 4 = 3 
+;List1 = 13.627; list2 = 0.606; list3 = 0.372, i = 3
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.627 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;Counter 4 = 4 
+;List1 = 13.021; list2 = 0.606; list3 = 0.379, i = 4
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-13.021 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;Counter 4 = 5 
+;List1 = 12.415; list2 = 0.606; list3 = 0.386, i = 5
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-12.415 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;Counter 4 = 6 
+;List1 = 11.809; list2 = 0.606; list3 = 0.394, i = 6
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-11.809 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;Counter 4 = 7 
+;List1 = 11.204; list2 = 0.606; list3 = 0.401, i = 7
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-11.204 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;Counter 4 = 8 
+;List1 = 10.598; list2 = 0.606; list3 = 0.408, i = 8
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-10.598 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+;Counter 4 = 9 
+;List1 = 9.992; list2 = 0.606; list3 = 0.415, i = 9
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-9.992 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+;Counter 4 = 10 
+;List1 = 9.386; list2 = 0.606; list3 = 0.422, i = 10
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-9.386 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+;Counter 4 = 11 
+;List1 = 8.78; list2 = 0.606; list3 = 0.43, i = 11
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-8.78 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+;Counter 4 = 12 
+;List1 = 8.174; list2 = 0.606; list3 = 0.437, i = 12
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-8.174 J-0.292 F10; Circular motion
+                                                
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;; 
+;Counter 4 = 13 
+;List1 = 7.568; list2 = 0.0; list3 = 0.444, i = 13
+G1 X-0.444 Y0.292 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-7.568 J-0.292 F10; Circular motion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 29 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G3 X0.00 Y0.5842 Z0.4382 F10; MOVE UP LAYER
+;even/odd counter = -1
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+;Counter 4 = 0 
+;List1 = 15.074; list2 = 15.074; list3 = 15.074, i = 0
+G1 X-0.444 Y0.00 Z0.00 F10; 
+G3 X0.00 Y-0.5842 I-7.124 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+;Counter 4 = 1 
+;List1 = 14.506; list2 = 14.506; list3 = 14.506, i = 1
+G1 X15.074 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-7.692 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;Counter 4 = 2 
+;List1 = 13.938; list2 = 13.938; list3 = 13.938, i = 2
+G1 X14.506 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-8.26 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;Counter 4 = 3 
+;List1 = 13.37; list2 = 13.37; list3 = 13.37, i = 3
+G1 X13.938 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-8.828 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;Counter 4 = 4 
+;List1 = 12.802; list2 = 12.802; list3 = 12.802, i = 4
+G1 X13.37 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-9.395 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;Counter 4 = 5 
+;List1 = 12.235; list2 = 12.235; list3 = 12.235, i = 5
+G1 X12.802 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-9.963 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+;Counter 4 = 6 
+;List1 = 11.667; list2 = 11.667; list3 = 11.667, i = 6
+G1 X12.235 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-10.531 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;Counter 4 = 7 
+;List1 = 11.099; list2 = 11.099; list3 = 11.099, i = 7
+G1 X11.667 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-11.099 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;Counter 4 = 8 
+;List1 = 10.531; list2 = 10.531; list3 = 10.531, i = 8
+G1 X11.099 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-11.667 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;Counter 4 = 9 
+;List1 = 9.963; list2 = 9.963; list3 = 9.963, i = 9
+G1 X10.531 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.235 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+;Counter 4 = 10 
+;List1 = 9.395; list2 = 9.395; list3 = 9.395, i = 10
+G1 X9.963 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-12.802 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+;Counter 4 = 11 
+;List1 = 8.828; list2 = 8.828; list3 = 8.828, i = 11
+G1 X9.395 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.37 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+;Counter 4 = 12 
+;List1 = 8.26; list2 = 8.26; list3 = 8.26, i = 12
+G1 X8.828 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-13.938 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+;Counter 4 = 13 
+;List1 = 7.692; list2 = 7.692; list3 = 7.692, i = 13
+G1 X8.26 Y0.5842 Z0.00 F10; Outward move 
+G3 X0.00 Y-0.5842 I-14.506 J-0.292 F10; Circular motion 
+                                               
+;;;;;;;;;;;;;;; Perimeter 15 ;;;;;;;;;;;;;;;
+;Counter 4 = 14 
+;List1 = 7.124; list2 = 7.124; list3 = 7.124, i = 14
+G1 X0.568 Y7.124 Z0.00 F0.292; Cirular motion 

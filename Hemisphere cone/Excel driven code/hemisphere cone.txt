@@ -1,0 +1,2353 @@
+;Date and Time: 2019-03-01 16:54:20.798131
+;HOLLOW hemisphere - internal cone geometry
+                                             
+#include "C:\Users\howell29\Desktop\ULTIMUSV.PGM"
+CALL SetPress Q43 P1; Try dropping back to 28
+CALL TogglePress P1; Turn pressure box on
+                                             
+G108; VELOCITY ON
+G91;  INCREMENTAL
+                                             
+DWELL 0.25; 		Accounts for ink lag, change as necessary
+                                             
+;Z-height = 0.75 * 0.5842 = 0.48315 
+;Height = (20mm/filament)/0.43815 mm = 34 filaments 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 1 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                             
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G3 X0.00 Y-0.5842 I-19.416 J-0.292 F15; CIRCULAR MOTION
+G1 X0.5842 Y0.5842 Z0.00 F15; 
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G3 X0.00 Y-0.5842 I-20 J-0.292 F15; CIRCULAR MOTION
+                                        
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 2 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.019 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.981 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.425 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-19.556 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 3 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-19.112 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.422 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-19.534 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.422 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-19.957 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 4 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.034 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.923 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.628 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-19.296 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.628 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-18.668 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 5 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-18.224 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.552 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-18.776 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.552 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-19.328 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.552 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-19.88 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 6 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.053 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.826 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.512 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-19.315 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.512 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.803 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.512 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.292 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.512 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-17.78 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 7 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-17.336 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.607 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.943 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.607 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-18.55 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.607 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-19.157 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.607 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-19.763 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 8 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.073 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.69 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.56 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-19.131 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.56 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.571 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.56 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.011 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.56 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.452 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.56 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-16.892 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 9 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-16.448 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.632 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.08 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.632 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.712 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.632 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-18.344 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.632 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-18.976 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.632 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-19.607 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 10 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.093 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.514 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.585 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.929 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.585 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.344 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.585 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.759 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.585 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.174 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.585 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.589 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.585 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-16.004 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 11 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-15.56 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.55 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.11 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.55 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.66 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.55 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.21 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.55 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.76 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.55 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-18.31 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.55 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-18.861 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.55 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-19.411 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 12 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.114 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.297 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.597 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.699 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.597 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.102 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.597 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.505 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.597 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.908 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.597 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.31 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.597 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.713 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.597 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-15.116 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 13 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-14.672 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.234 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.797 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.359 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.922 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.484 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-18.047 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-18.609 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.562 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-19.172 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 14 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.136 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-19.036 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.601 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.435 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.601 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.834 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.601 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.233 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.601 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.632 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.601 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.031 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.601 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.43 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.601 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.829 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.601 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-14.228 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 15 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-13.784 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.351 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.919 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.486 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.053 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.62 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.188 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.755 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-18.322 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.567 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-18.889 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 16 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.158 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-18.731 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-18.132 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.533 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.934 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.335 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.736 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.137 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.538 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.939 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.599 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-13.34 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 17 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-12.896 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.463 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.029 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.596 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.162 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.729 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.295 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.862 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.428 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.995 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.567 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-18.561 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 18 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.182 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-18.379 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.593 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.787 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.593 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.194 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.593 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.601 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.593 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.008 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.593 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.416 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.593 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.823 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.593 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.23 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.593 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.637 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.593 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.045 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.593 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-12.452 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 19 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-12.008 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.57 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.131 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.693 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.254 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.816 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.377 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.939 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.5 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.062 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.562 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.624 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.562 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-18.185 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 20 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.207 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-17.978 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-17.395 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.812 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.229 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.646 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.063 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.479 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.896 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.313 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.73 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+G1 X-0.583 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.147 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.583 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-11.564 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 21 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-11.12 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.723 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.327 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.93 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.534 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.137 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.741 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.344 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.947 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.551 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.603 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-17.154 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.603 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-17.758 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 22 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.234 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-17.524 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.953 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.383 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.812 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.241 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.671 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.1 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.529 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.959 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.388 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.817 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.247 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.571 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-10.676 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 23 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-10.232 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.819 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.406 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.993 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.58 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.167 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.754 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.341 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.928 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.515 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.102 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+G1 X0.587 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.689 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.587 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-17.276 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 24 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.263 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-17.012 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-16.41 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.808 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.206 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.604 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.002 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.4 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.798 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.196 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.594 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.992 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+G1 X-0.602 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.39 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.602 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-9.788 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 25 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-9.344 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.912 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.481 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.049 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.618 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.186 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.755 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.323 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.891 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.46 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.028 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.597 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+G1 X0.568 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-16.165 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.568 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-16.734 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 26 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.295 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-16.439 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.859 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.279 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.699 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.119 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.539 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.959 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.379 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.799 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.22 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.64 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.06 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+G1 X-0.58 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.48 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.58 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-8.9 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 27 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-8.456 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.046 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.636 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.226 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.816 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.406 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.996 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.586 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.176 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.766 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.356 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.946 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+G1 X0.59 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-15.536 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.59 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-16.126 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 28 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.331 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-15.795 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-15.197 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.598 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.999 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.4 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.802 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.203 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.604 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.006 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.407 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.808 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.209 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+G1 X-0.599 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.611 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.599 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-8.012 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 29 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-7.568 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.174 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.78 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.386 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.992 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.598 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.204 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.809 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.415 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.021 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.627 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.233 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+G1 X0.606 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.839 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.606 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-15.445 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 30 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.371 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-15.074 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-14.506 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.938 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.37 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.802 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.235 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.667 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.099 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.531 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.963 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.395 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.828 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.26 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;; 
+G1 X-0.568 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.692 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 15 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.568 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-7.124 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 31 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-6.68 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.251 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.823 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.394 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.966 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.537 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.109 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.68 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.252 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.823 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.395 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.966 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.537 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+G1 X0.571 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-14.109 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 15 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.571 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-14.68 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 32 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 16 ;;;;;;;;;;;;;;; 
+G1 X-0.418 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-14.262 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 17 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.689 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 18 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-13.116 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 19 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.542 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 20 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.969 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 21 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.396 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 22 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.823 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 23 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.249 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 24 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.676 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 25 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.103 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 26 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.529 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 27 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.956 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 28 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.383 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 29 ;;;;;;;;;;;;;;; 
+G1 X-0.573 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-6.809 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 30 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.573 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-6.236 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 33 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-5.792 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.365 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.939 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.512 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.085 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.658 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.232 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.805 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.378 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.952 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.525 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.098 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.671 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+G1 X0.573 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-13.245 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 15 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.573 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-13.818 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 34 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 16 ;;;;;;;;;;;;;;; 
+G1 X-0.474 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-13.345 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 17 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.773 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 18 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-12.202 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 19 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.631 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 20 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.06 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 21 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.489 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 22 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.917 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 23 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.346 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 24 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.775 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 25 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.204 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 26 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.633 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 27 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.062 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 28 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-6.49 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 29 ;;;;;;;;;;;;;;; 
+G1 X-0.571 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-5.919 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 30 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.571 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-5.348 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 35 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-4.904 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-5.471 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.038 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.604 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.171 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.738 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.305 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.871 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.438 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.005 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.572 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.138 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.705 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+G1 X0.567 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-12.272 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 15 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.567 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-12.839 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 36 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 16 ;;;;;;;;;;;;;;; 
+G1 X-0.542 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-12.296 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 17 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.694 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 18 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-11.091 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 19 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.488 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 20 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.885 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 21 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.282 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 22 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.68 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 23 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.077 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 24 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.474 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 25 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-6.871 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 26 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-6.268 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 27 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-5.666 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 28 ;;;;;;;;;;;;;;; 
+G1 X-0.603 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-5.063 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 29 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.603 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-4.46 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 37 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-4.016 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-4.608 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-5.2 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-5.792 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.384 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.976 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.568 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.16 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.752 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.344 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.936 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-10.529 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+G1 X0.592 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-11.121 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.592 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-11.713 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 38 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.632 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-11.081 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-10.503 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.926 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.348 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.771 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.193 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.615 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.038 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-6.46 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-5.882 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-5.305 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-4.727 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+G1 X-0.578 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-4.15 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 14 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.578 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-3.572 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 39 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-3.128 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-3.733 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-4.339 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-4.944 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-5.55 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.155 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.76 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.366 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.971 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.576 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.182 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+G1 X0.605 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-9.787 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.605 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-10.393 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 40 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.757 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-9.635 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-9.056 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-8.477 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.897 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.318 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-6.739 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-6.16 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-5.58 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-5.001 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-4.422 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-3.843 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;; 
+G1 X-0.579 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-3.263 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 13 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.579 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-2.684 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 41 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-2.24 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-2.836 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-3.431 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-4.027 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-4.622 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-5.218 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-5.814 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.409 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.005 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-7.6 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;;
+G1 X0.596 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-8.196 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 12 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.596 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-8.791 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 42 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-0.958 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-7.833 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.604 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-7.229 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.604 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-6.626 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.604 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-6.022 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.604 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-5.418 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.604 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-4.814 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.604 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-4.211 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.604 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-3.607 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+G1 X-0.604 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-3.003 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;; 
+G1 X-0.604 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-2.4 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 11 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.604 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-1.796 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 43 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-1.352 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.595 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-1.947 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.595 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-2.543 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.595 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-3.138 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.595 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-3.734 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+G1 X0.595 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-4.329 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;;
+G1 X0.595 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-4.925 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;;
+G1 X0.595 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-5.52 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;;
+G1 X0.595 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-6.116 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 10 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.595 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-6.711 J-0.292 F15; CIRCULAR MOTION 
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 44 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                                
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;; 
+G1 X-1.388 Y0.00 Z0.00 F15; PERIMETER DIFFERENCE L[i] and L[i-1] 
+G3 X0.00 Y-0.5842 I-5.323 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;; 
+G1 X-0.552 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-4.771 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;; 
+G1 X-0.552 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-4.219 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;; 
+G1 X-0.552 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-3.667 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;; 
+G1 X-0.552 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-3.116 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;; 
+G1 X-0.552 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-2.564 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 7 ;;;;;;;;;;;;;;; 
+G1 X-0.552 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-2.012 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 8 ;;;;;;;;;;;;;;; 
+G1 X-0.552 Y0.5842 Z0.00 F15; MOVE INWARD
+G3 X0.00 Y-0.5842 I-1.46 J-0.292 F15; CIRCULAR MOTION
+                                                
+;;;;;;;;;;;;;;; Perimeter 9 ;;;;;;;;;;;;;;; 
+;MARKER
+G1 X-0.552 Y0.5842 Z0.00 F15; CIRCULAR ALIGNMENT
+G3 X0.00 Y-0.5842 I-0.908 J-0.292 F15; CIRCULAR MOTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Layer 45 ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G1 X0.00 Y0.5842 Z0.4966 F15; MOVE UP LAYER
+                                               
+;;;;;;;;;;;;;;; Perimeter 1 ;;;;;;;;;;;;;;;
+G1 X-0.444 Y0.00 Z0.00 F15; 
+G3 X0.00 Y-0.5842 I-0.464 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 2 ;;;;;;;;;;;;;;;
+G1 X0.578 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-1.042 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 3 ;;;;;;;;;;;;;;;
+G1 X0.578 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-1.62 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 4 ;;;;;;;;;;;;;;;
+G1 X0.578 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-2.198 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 5 ;;;;;;;;;;;;;;;
+G1 X0.578 Y0.5842 Z0.00 F15;        OUTWARD MOVE 
+G3 X0.00 Y-0.5842 I-2.776 J-0.292 F15; CIRCULAR MOTION 
+  
+                                               
+;;;;;;;;;;;;;;; Perimeter 6 ;;;;;;;;;;;;;;;
+;MARKER2
+G1 X0.578 Y0.5842 Z0.00 F15;        CIRCULAR ALIGNMENT 
+G3 X0.00 Y-0.5842 I-3.354 J-0.292 F15; CIRCULAR MOTION 
+  
+CALL TogglePress P1; Turn pressure box on
+G1 Y15.00 Z5.00 F50
